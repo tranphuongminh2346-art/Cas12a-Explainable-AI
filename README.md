@@ -56,7 +56,7 @@ Evaluated across **11,365 canonical targets** (5'-TTTV-3' PAM) from human high-t
 | **TTTG PAM** | 4,897 | **0.521** | **0.544** | 0.790 | 20.33 | 25.02 |
 | **Combined Canonical** | **11,365** | **0.525** | **0.558** | **0.801** | **20.14** | **24.87** |
 
-*Inference latency is hardware-dependent, typically hundreds of milliseconds per 1,000 guides (~150–600 ms, < 0.6 ms/guide) on standard consumer CPUs (no GPU required).*
+*Inference latency is hardware-dependent, typically hundreds of milliseconds per 1,000 guides (~150-600 ms, < 0.6 ms/guide) on standard consumer CPUs (no GPU required).*
 
 ---
 
