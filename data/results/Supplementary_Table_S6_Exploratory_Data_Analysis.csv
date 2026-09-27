@@ -22,7 +22,7 @@ Biological Arrest,Poly-T in Target Window (>=TTTT),Mean Indel Efficiency,21.28,"
 Biological Arrest,Poly-T in Transcribed Guide,Mean Indel Efficiency,16.85,"%, n = 927 canonical targets (20-nt guide)"
 Biological Arrest,Boundary-Spanning Poly-T,Mean Indel Efficiency,56.93,"%, n = 115 canonical targets (positions 18-23; intact guide control)"
 Biological Arrest,Premature Termination Deficit,Mean Cleavage Deficit,-38.38,"%, in-guide deficit relative to intact baseline"
-Hypothesis Testing,Poly-T Termination,Mann-Whitney U P-value,1.21e-230,Decisive physical transcription barrier
+Hypothesis Testing,Poly-T Termination,Mann-Whitney U P-value,1.21e-230,Strong statistical evidence for transcription arrest
 Duplex Thermodynamics,Seed Domain (nt 1-8),Mean Stacking Free Energy,-10.12,kcal/mol (SantaLucia 1998)
 Duplex Thermodynamics,Trunk Domain (nt 9-16),Mean Stacking Free Energy,-10.10,kcal/mol (SantaLucia 1998)
 Duplex Thermodynamics,Distal Domain (nt 17-23),Mean Stacking Free Energy,-8.73,kcal/mol (SantaLucia 1998)
