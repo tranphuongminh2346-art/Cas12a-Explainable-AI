@@ -1,0 +1,5 @@
+PAM Motif,Count (n),Library Proportion (%),Mean Observed Indel (%),Median Observed Indel (%),Spearman ρ,Pearson r,ROC-AUC (>=20%),MAE (%),RMSE (%)
+TTTA,1400,12.32,54.45,60.08,0.5299,0.5761,0.8119,20.53,25.42
+TTTC,5068,44.59,53.2,56.87,0.5179,0.5623,0.8066,19.85,24.58
+TTTG,4897,43.09,50.3,52.4,0.5205,0.5436,0.7904,20.33,25.02
+Combined Canonical (5'-TTTV-3'),11365,100.00,52.10,55.10,0.5247,0.5580,0.8012,20.14,24.87

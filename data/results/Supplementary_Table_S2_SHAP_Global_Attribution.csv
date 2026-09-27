@@ -1,0 +1,54 @@
+Rank,Feature Name,Biophysical Domain,Mean Absolute SHAP (|SHAP|),Effect Direction,Max Negative Impact (%),Max Positive Impact (%),Mechanistic / Biological Interpretation
+1,poly_t_terminator,Transcriptional Integrity,6.842,Deleterious,-35.20,0.00,23-bp target-window Poly-T flag; negative attribution is dominated by in-guide TTTT tracts that abort Pol III crRNA synthesis prior to RNP assembly
+2,stacking_dg_spacer,Thermodynamics,4.518,Promotive,-12.40,+15.30,Total base-stacking stabilization energy across the 23-nt crRNA:target DNA hybrid duplex
+3,stacking_dg_distal,Thermodynamics,3.925,Promotive,-9.80,+14.60,Distal base-stacking stabilizes non-target strand displacement and positions cleavage loops in RuvC
+4,tm_gradient_seed_vs_distal,Kinetic Polarity,3.214,Promotive,-7.50,+8.40,Directional thermodynamic gradient (Tm_seed - Tm_distal) accelerates forward R-loop zippering
+5,seed_pos_1_T,Seed Specificity,2.890,Deleterious,-10.15,+0.50,Thymine at position 1 directly adjacent to PAM destabilizes the initial unwinding bubble
+6,seed_pos_1_G,Seed Specificity,2.450,Promotive,-0.80,+8.20,Guanine at position 1 enhances initial base pair stacking upon PAM recognition
+7,seed_pos_2_C,Seed Specificity,2.315,Promotive,-0.50,+7.95,Cytosine at position 2 facilitates rapid R-loop nucleation and seed elongation
+8,seed_pos_6_A,Seed Specificity,2.180,Promotive,-0.40,+7.80,Adenine at position 6 optimizes major-groove interactions with AsCas12a WED domain
+9,gc_spacer,Sequence Composition,2.050,Promotive,-8.90,+6.40,Overall guide GC content drives duplex thermodynamic stability (optimal range 40-65%)
+10,stacking_dg_seed,Thermodynamics,1.980,Promotive,-6.20,+7.10,Base-stacking free energy across seed region (nt 1-8) lowering nucleation activation barrier
+11,pam_terminal_is_C,PAM Architecture,1.850,Promotive,-0.20,+6.30,Terminal Cytosine (TTTC PAM) provides optimal conformational fitting in the PAM-interacting cleft
+12,seed_pos_3_T,Seed Specificity,1.720,Deleterious,-6.40,+0.30,Thymine at seed position 3 reduces local duplex stiffness and hampers R-loop propagation
+13,tm_seed,Thermodynamics,1.680,Promotive,-5.80,+5.90,Melting temperature of seed duplex; high seed Tm prevents early R-loop collapse
+14,gc_seed,Sequence Composition,1.610,Promotive,-5.20,+5.40,Seed GC percentage; balances strand displacement kinetics with duplex formation
+15,pam_terminal_is_G,PAM Architecture,1.540,Deleterious,-5.10,+0.80,Terminal Guanine (TTTG PAM) induces steric strain in the AsCas12a PAM pocket
+16,tm_distal,Thermodynamics,1.490,Deleterious,-5.80,+3.10,Excessive distal Tm creates hyper-stable distal duplex that retards conformational cleavage release
+17,pam_terminal_is_A,PAM Architecture,1.420,Promotive,-1.10,+4.20,Terminal Adenine (TTTA PAM) represents canonical functional PAM with baseline cleavage rates
+18,stacking_dg_trunk,Thermodynamics,1.380,Promotive,-3.90,+4.80,Base-stacking across intermediate trunk region (nt 9-16) bridging seed and distal domains
+19,seed_pos_4_G,Seed Specificity,1.310,Promotive,-1.20,+4.50,Guanine at position 4 promotes stable base-pairing during seed-to-trunk transition
+20,gc_distal,Sequence Composition,1.250,Context-dependent,-4.50,+4.10,Distal GC percentage; moderate levels facilitate cleavage conformational change
+21,tm_spacer,Thermodynamics,1.190,Promotive,-4.20,+4.00,Full spacer melting temperature correlating with total DNA:RNA duplex lifetime
+22,seed_pos_5_C,Seed Specificity,1.120,Promotive,-0.90,+3.80,Cytosine at position 5 supports optimal twisting angle in the central guide groove
+23,seed_pos_7_T,Seed Specificity,1.080,Deleterious,-4.10,+0.60,"Thymine at position 7 increases local conformational entropy, slowing distal lock"
+24,seed_pos_2_G,Seed Specificity,1.020,Promotive,-0.80,+3.50,Guanine at position 2 provides favorable thermodynamic stacking with position 1
+25,gc_trunk,Sequence Composition,0.980,Promotive,-3.20,+3.40,Trunk GC content maintaining uniform unwinding progression through middle segment
+26,seed_pos_8_A,Seed Specificity,0.940,Promotive,-1.10,+3.20,Adenine at seed-trunk boundary (pos 8) facilitates structural handover to REC lobe
+27,poly_t_strict_5t,Transcriptional Integrity,0.890,Deleterious,-28.50,0.00,Strict 5xT Pol III termination sequence causing near-total ablation of functional crRNA
+28,seed_pos_3_C,Seed Specificity,0.860,Promotive,-0.70,+2.90,Cytosine at position 3 enhances duplex rigidity in early seed zone
+29,seed_pos_4_C,Seed Specificity,0.820,Promotive,-0.60,+2.80,Cytosine at position 4 provides intermediate stacking support
+30,seed_pos_1_A,Seed Specificity,0.790,Context-dependent,-2.50,+2.60,Adenine at position 1 allows moderate cleavage; intermediate between G/C and T
+31,seed_pos_6_G,Seed Specificity,0.750,Promotive,-0.80,+2.50,Guanine at position 6 reinforces central R-loop core
+32,gc_34bp,Sequence Composition,0.710,Promotive,-2.80,+2.40,Global flanking sequence GC content reflecting surrounding chromatin accessibility
+33,seed_pos_5_G,Seed Specificity,0.680,Promotive,-0.90,+2.30,Guanine at position 5 stabilizes R-loop breathing
+34,seed_pos_7_A,Seed Specificity,0.640,Promotive,-1.10,+2.10,Adenine at position 7 supports terminal seed lock
+35,seed_pos_2_A,Seed Specificity,0.610,Context-dependent,-1.80,+1.90,Adenine at position 2 shows neutral to moderate activity
+36,seed_pos_8_G,Seed Specificity,0.580,Promotive,-0.90,+2.00,Guanine at position 8 interacts favorably with hinge residues
+37,seed_pos_3_G,Seed Specificity,0.550,Promotive,-0.80,+1.80,Guanine at position 3 contributes positive stacking
+38,seed_pos_4_A,Seed Specificity,0.520,Context-dependent,-1.40,+1.70,Adenine at position 4 demonstrates mild positive association
+39,seed_pos_6_C,Seed Specificity,0.490,Promotive,-0.70,+1.60,Cytosine at position 6 maintains regular helical spacing
+40,seed_pos_5_A,Seed Specificity,0.460,Context-dependent,-1.20,+1.50,Adenine at position 5 supports flexible transition
+41,seed_pos_8_C,Seed Specificity,0.430,Promotive,-0.60,+1.40,Cytosine at position 8 reinforces boundary stacking
+42,seed_pos_7_C,Seed Specificity,0.410,Promotive,-0.50,+1.30,Cytosine at position 7 favors late seed pairing
+43,seed_pos_2_T,Seed Specificity,0.390,Deleterious,-2.20,+0.40,Thymine at position 2 introduces conformational instability
+44,seed_pos_4_T,Seed Specificity,0.360,Deleterious,-2.00,+0.30,Thymine at position 4 creates a low-melting pocket in the seed
+45,seed_pos_5_T,Seed Specificity,0.330,Deleterious,-1.90,+0.30,Thymine at position 5 disrupts cooperative base pair propagation
+46,seed_pos_6_T,Seed Specificity,0.310,Deleterious,-1.80,+0.20,Thymine at position 6 causes kinetic pause during seed completion
+47,seed_pos_8_T,Seed Specificity,0.290,Deleterious,-1.70,+0.30,Thymine at position 8 weakens junction between seed and trunk
+48,poly_g_quadruplex,Secondary Structure,0.270,Deleterious,-4.80,+0.10,Tandem G-quartets (GGGG) form inhibitory G-quadruplex structures in crRNA
+49,seed_pos_3_A,Seed Specificity,0.250,Context-dependent,-1.10,+1.10,Adenine at position 3 provides moderate base-pairing stability
+50,seed_pos_7_G,Seed Specificity,0.230,Promotive,-0.60,+0.90,Guanine at position 7 contributes stable distal handover
+51,seed_pos_1_C,Seed Specificity,0.210,Promotive,-0.50,+0.80,Cytosine at position 1 supports duplex initiation
+52,gc_pam,Sequence Composition,0.180,Context-dependent,-1.20,+0.70,PAM GC content reflects canonical TTTV composition
+53,pam_terminal_is_T,PAM Architecture,0.020,Deleterious,-18.50,0.00,Terminal Thymine (TTTT) defines inactive non-canonical PAM and transcription arrest

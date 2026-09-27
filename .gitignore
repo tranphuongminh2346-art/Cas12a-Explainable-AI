@@ -1,0 +1,115 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.matplotlib_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Secrets & Credentials
+kaggle.json
+*token*
+*.key
+*.pem
+
+# Large temporary archive & results zip packages
+*.zip
+*.tar.gz
+scratch/
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# AI Agent System Prompts, Skills Catalog & Internal Audit Logs
+.agent/
+AGENTS.md
+walkthrough.md
+ROADMAP_3_MONTHS.md
+.gemini/
+.antigravity/
+.claude/
+.cursor/
+
+# Private Journal Submission Package (Submit to Journal Portal / ScholarOne, NOT GitHub)
+manuscript/
+
+# Internal Developer & Runner Scripts (Local automation & Kaggle runners)
+scripts/
+
+# Obsolete / Internal Notebooks & Metadata
+notebooks/Cas12a_XAI_Pipeline.ipynb
+notebooks/Cas12a_Validation_Benchmark.ipynb
+notebooks/Cas12a_Ablation_and_Error_Analysis.ipynb
+notebooks/kernel-metadata.json
+
+# Raw screening data & intermediate packages (Keep only data/results/)
+data/raw/
+data/kaggle_dataset/
+cas12a_10fold_results_package/
+references/

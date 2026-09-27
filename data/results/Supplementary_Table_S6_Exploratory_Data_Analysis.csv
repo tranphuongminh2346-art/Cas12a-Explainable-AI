@@ -1,0 +1,33 @@
+Category,Subgroup,Metric Name,Value,Units / Interpretation
+Dataset Cohort,All Filtered Targets,Sample Size (N),15000,Total high-throughput targets
+Dataset Cohort,Canonical Targets (TTTV),Sample Size (n),11365,75.77% of total library
+Dataset Cohort,Non-canonical (TTTT),Sample Size (n),3635,24.23% of total library
+Target Cleavage,Canonical Cohort,Mean Observed Indel,52.10,"%, +/- 29.98% SD"
+Target Cleavage,Canonical Cohort,Median Observed Indel,55.10,"%, IQR = 48.48%"
+Target Cleavage,Canonical Cohort,Functional Editing Rate (>=20%),81.12,"%, 9,219 of 11,365 targets"
+Target Cleavage,Canonical Cohort,Skewness,-0.21,Slight negative skew towards high cleavage
+Target Cleavage,Canonical Cohort,Kurtosis,-1.05,Platykurtic broad distribution
+PAM Hierarchy,TTTA Subclass,Count (n),1400,12.32% of canonical cohort
+PAM Hierarchy,TTTA Subclass,Mean Indel Efficiency,54.45,"%, Median = 60.08%, SD = 31.11%, Functional = 81.50%"
+PAM Hierarchy,TTTC Subclass,Count (n),5068,44.59% of canonical cohort
+PAM Hierarchy,TTTC Subclass,Mean Indel Efficiency,53.20,"%, Median = 56.87%, SD = 29.72%, Functional = 81.95%"
+PAM Hierarchy,TTTG Subclass,Count (n),4897,43.09% of canonical cohort
+PAM Hierarchy,TTTG Subclass,Mean Indel Efficiency,50.30,"%, Median = 52.40%, SD = 29.81%, Functional = 80.15%"
+PAM Hierarchy,TTTT Inactive Control,Count (n),3635,Negative control cohort
+PAM Hierarchy,TTTT Inactive Control,Mean Indel Efficiency,11.82,"%, Median = 5.11%, SD = 16.53%, Functional = 20.88%"
+Hypothesis Testing,PAM Determinism,Kruskal-Wallis H-statistic,35.91,Degrees of freedom = 2
+Hypothesis Testing,PAM Determinism,Kruskal-Wallis P-value,1.59e-08,Statistically significant PAM modulation across canonical TTTV
+Biological Arrest,Intact crRNA (No TTTT),Mean Indel Efficiency,55.22,"%, n = 10,323 canonical targets"
+Biological Arrest,Poly-T in Target Window (>=TTTT),Mean Indel Efficiency,21.28,"%, n = 1,042 canonical targets (23-bp window)"
+Biological Arrest,Poly-T in Transcribed Guide,Mean Indel Efficiency,16.85,"%, n = 927 canonical targets (20-nt guide)"
+Biological Arrest,Boundary-Spanning Poly-T,Mean Indel Efficiency,56.93,"%, n = 115 canonical targets (positions 18-23; intact guide control)"
+Biological Arrest,Premature Termination Deficit,Mean Cleavage Deficit,-38.38,"%, in-guide deficit relative to intact baseline"
+Hypothesis Testing,Poly-T Termination,Mann-Whitney U P-value,1.21e-230,Decisive physical transcription barrier
+Duplex Thermodynamics,Seed Domain (nt 1-8),Mean Stacking Free Energy,-10.12,kcal/mol (SantaLucia 1998)
+Duplex Thermodynamics,Trunk Domain (nt 9-16),Mean Stacking Free Energy,-10.10,kcal/mol (SantaLucia 1998)
+Duplex Thermodynamics,Distal Domain (nt 17-23),Mean Stacking Free Energy,-8.73,kcal/mol (SantaLucia 1998)
+Duplex Thermodynamics,Full Spacer (nt 1-23),Mean Stacking Free Energy,-31.85,kcal/mol (SantaLucia 1998)
+Kinetic Polarity,Polarity Gradient (Delta_Tm),Mean Gradient,+2.91,deg C (Tm_seed - Tm_distal; linear r = 0.2055)
+Kinetic Polarity,Polarity Gradient Correlation,Spearman Correlation (rho),0.1963,P = 3.78e-99 vs Indel Frequency
+Kinetic Polarity,Seed Tm Correlation,Spearman Correlation (rho),0.1544,P = 1.40e-61 vs Indel Frequency
+Kinetic Polarity,Distal Tm Correlation,Spearman Correlation (rho),-0.0945,P = 5.60e-24 vs Indel Frequency

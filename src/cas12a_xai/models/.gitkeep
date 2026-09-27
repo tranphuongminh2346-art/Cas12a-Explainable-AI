@@ -1,0 +1,2 @@
+# Models directory for optional trained LightGBM booster files (.txt)
+# When trained via 'python src/03_train_models.py --save_booster', the booster is written here.

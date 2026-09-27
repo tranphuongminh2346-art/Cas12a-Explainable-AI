@@ -1,0 +1,7 @@
+Model Configuration,Number of Features,Spearman Correlation (ρ),Spearman Drop (Δρ),Relative Degradation (%),Biophysical Role
+Full Biophysical Model (Baseline),57,0.5245,0.0000,0.00%,Full unified biophysical ensemble
+Ablation 1: No Stacking Thermodynamics,53,0.5158,-0.0087,-1.66%,Excludes SantaLucia deltaG values
+Ablation 2: No Polarity Gradient,53,0.523,-0.0014,-0.27%,Excludes melting temperatures and deltaTm
+Ablation 3: No PAM Indicators,52,0.5077,-0.0168,-3.20%,Excludes terminal PAM flags
+Ablation 4: No Terminator Flags,54,0.4921,-0.0323,-6.16%,Excludes Pol III TTTT terminator
+Ablation 5: Sequence-Only One-Hot,32,0.404,-0.1205,-22.97%,Baseline one-hot positional encoding only

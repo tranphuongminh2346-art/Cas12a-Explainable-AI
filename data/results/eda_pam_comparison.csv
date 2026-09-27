@@ -1,0 +1,5 @@
+pam_motif,category,count,proportion_pct,mean_indel,median_indel,std_indel,iqr_indel,pct_ge_20
+TTTA,Canonical,1400,12.32,54.45,60.08,31.11,50.03,81.5
+TTTC,Canonical,5068,44.59,53.2,56.87,29.72,47.04,81.95
+TTTG,Canonical,4897,43.09,50.3,52.4,29.81,48.6,80.15
+TTTT,Arrested / Non-canonical,3635,24.23,11.82,5.11,16.53,16.98,20.88

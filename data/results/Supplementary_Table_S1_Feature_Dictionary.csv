@@ -1,0 +1,58 @@
+Feature Name,Domain,Category,Data Type,Range / Units,Biophysical / Biological Rationale,Formula / Calculation Method
+gc_34bp,Full Target,Sequence Composition,Float,"[0.0, 1.0]",Global GC content influences local chromatin state and DNA duplex unwinding energy,"(Count(G) + Count(C)) / 34"
+gc_pam,PAM (-4 to -1),Sequence Composition,Float,"[0.0, 1.0]",PAM GC content reflects sequence constraint of canonical 5'-TTTV-3' PAM,"(Count(G) + Count(C)) / 4"
+gc_spacer,Spacer (1 to 23),Sequence Composition,Float,"[0.0, 1.0]",Overall guide GC content dictates total RNA:DNA hybrid thermodynamic stability,"(Count(G) + Count(C)) / 23"
+gc_seed,Seed (1 to 8),Sequence Composition,Float,"[0.0, 1.0]",GC richness in seed domain governs R-loop nucleation barrier,"(Count(G) + Count(C)) / 8"
+gc_trunk,Trunk (9 to 16),Sequence Composition,Float,"[0.0, 1.0]",Intermediate R-loop progression zone linking nucleation to distal cleavage,"(Count(G) + Count(C)) / 8"
+gc_distal,Distal (17 to 23),Sequence Composition,Float,"[0.0, 1.0]",Distal base pairing stabilizes non-target strand displacement into the RuvC pocket,"(Count(G) + Count(C)) / 7"
+tm_spacer,Spacer (1 to 23),Thermodynamics,Float,°C,Melting temperature of full 23-nt RNA:DNA guide:target duplex,"Nearest-neighbor / Wallace rule: 64.9 + 41*(GC-16.4)/N"
+tm_seed,Seed (1 to 8),Thermodynamics,Float,°C,Melting temperature of 8-nt seed domain governing initial unwinding,"Wallace rule: (wA+xT)*2 + (yG+zC)*4"
+tm_distal,Distal (17 to 23),Thermodynamics,Float,°C,Melting temperature of distal domain regulating conformational cleavage lock,"Wallace rule: (wA+xT)*2 + (yG+zC)*4"
+tm_gradient_seed_vs_distal,Kinetic Polarity,Thermodynamics,Float,°C,Directional thermodynamic gradient driving forward R-loop propagation,tm_seed - tm_distal
+stacking_dg_seed,Seed (1 to 8),Thermodynamics,Float,kcal/mol,Unified nearest-neighbor base stacking free energy in seed domain,Sum of SantaLucia (1998) deltaG values for 7 dinucleotide steps
+stacking_dg_trunk,Trunk (9 to 16),Thermodynamics,Float,kcal/mol,Base stacking free energy across middle trunk domain,Sum of SantaLucia (1998) deltaG values for 7 dinucleotide steps
+stacking_dg_distal,Distal (17 to 23),Thermodynamics,Float,kcal/mol,Base stacking free energy across distal terminal pairing region,Sum of SantaLucia (1998) deltaG values for 6 dinucleotide steps
+stacking_dg_spacer,Spacer (1 to 23),Thermodynamics,Float,kcal/mol,Total nearest-neighbor base stacking free energy of the 23-nt hybrid,Sum of SantaLucia (1998) deltaG values across all 22 dinucleotide steps
+poly_t_terminator,Transcribed Guide (1 to 20 / 23),Expression Penalty,Binary,"{0, 1}",Four consecutive thymines act as canonical RNA Pol III transcription terminator (evaluated across spacer; strictly active in transcribed 20-nt guide),int('TTTT' in spacer_sequence)
+poly_t_strict_5t,Spacer (1 to 23),Expression Penalty,Binary,"{0, 1}",Strict high-efficiency Pol III terminator causing complete transcript truncation,int('TTTTT' in spacer_sequence)
+poly_g_quadruplex,Spacer (1 to 23),Secondary Structure,Binary,"{0, 1}",Four consecutive guanines capable of forming G-quadruplexes in crRNA,int('GGGG' in spacer_sequence)
+pam_terminal_is_A,PAM (-1),PAM Identity,Binary,"{0, 1}",Terminal nucleotide of 5'-TTTV-3' is Adenine (TTTA PAM),int(pam_sequence[-1] == 'A')
+pam_terminal_is_C,PAM (-1),PAM Identity,Binary,"{0, 1}",Terminal nucleotide of 5'-TTTV-3' is Cytosine (TTTC PAM; hyperactive variant),int(pam_sequence[-1] == 'C')
+pam_terminal_is_G,PAM (-1),PAM Identity,Binary,"{0, 1}",Terminal nucleotide of 5'-TTTV-3' is Guanine (TTTG PAM),int(pam_sequence[-1] == 'G')
+pam_terminal_is_T,PAM (-1),PAM Identity,Binary,"{0, 1}",Terminal nucleotide is Thymine (TTTT; canonical inactive non-PAM),int(pam_sequence[-1] == 'T')
+seed_dinuc_1_2_UU,Seed (1-2),Motif Penalty,Binary,"{0, 1}",Dinucleotide TT at seed positions 1-2 impairs transition from PAM docking,int(seed_sequence[0:2] == 'TT')
+seed_dinuc_1_2_CC,Seed (1-2),Motif Preference,Binary,"{0, 1}",Dinucleotide CC at seed positions 1-2 provides favorable nucleation stacking,int(seed_sequence[0:2] == 'CC')
+seed_dinuc_1_2_GG,Seed (1-2),Motif Preference,Binary,"{0, 1}",Dinucleotide GG at seed positions 1-2 promotes stable R-loop initiation,int(seed_sequence[0:2] == 'GG')
+seed_dinuc_1_2_GA,Seed (1-2),Motif Preference,Binary,"{0, 1}",Dinucleotide GA at seed positions 1-2 facilitates conformational opening,int(seed_sequence[0:2] == 'GA')
+seed_pos_1_A,Seed (Pos 1),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 1 immediately adjacent to PAM,One-hot encoding of seed position 1
+seed_pos_1_C,Seed (Pos 1),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 1 immediately adjacent to PAM,One-hot encoding of seed position 1
+seed_pos_1_G,Seed (Pos 1),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 1 immediately adjacent to PAM (favorable),One-hot encoding of seed position 1
+seed_pos_1_T,Seed (Pos 1),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 1 (strongly disfavored; negative SHAP),One-hot encoding of seed position 1
+seed_pos_2_A,Seed (Pos 2),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 2 (disfavored seed base),One-hot encoding of seed position 2
+seed_pos_2_C,Seed (Pos 2),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 2 (favorable seed base),One-hot encoding of seed position 2
+seed_pos_2_G,Seed (Pos 2),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 2,One-hot encoding of seed position 2
+seed_pos_2_T,Seed (Pos 2),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 2,One-hot encoding of seed position 2
+seed_pos_3_A,Seed (Pos 3),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 3,One-hot encoding of seed position 3
+seed_pos_3_C,Seed (Pos 3),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 3,One-hot encoding of seed position 3
+seed_pos_3_G,Seed (Pos 3),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 3,One-hot encoding of seed position 3
+seed_pos_3_T,Seed (Pos 3),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 3,One-hot encoding of seed position 3
+seed_pos_4_A,Seed (Pos 4),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 4 (disfavored seed base),One-hot encoding of seed position 4
+seed_pos_4_C,Seed (Pos 4),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 4,One-hot encoding of seed position 4
+seed_pos_4_G,Seed (Pos 4),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 4 (favorable seed base),One-hot encoding of seed position 4
+seed_pos_4_T,Seed (Pos 4),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 4,One-hot encoding of seed position 4
+seed_pos_5_A,Seed (Pos 5),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 5,One-hot encoding of seed position 5
+seed_pos_5_C,Seed (Pos 5),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 5,One-hot encoding of seed position 5
+seed_pos_5_G,Seed (Pos 5),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 5,One-hot encoding of seed position 5
+seed_pos_5_T,Seed (Pos 5),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 5,One-hot encoding of seed position 5
+seed_pos_6_A,Seed (Pos 6),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 6 (favorable seed base),One-hot encoding of seed position 6
+seed_pos_6_C,Seed (Pos 6),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 6,One-hot encoding of seed position 6
+seed_pos_6_G,Seed (Pos 6),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 6,One-hot encoding of seed position 6
+seed_pos_6_T,Seed (Pos 6),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 6,One-hot encoding of seed position 6
+seed_pos_7_A,Seed (Pos 7),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 7 (disfavored seed base),One-hot encoding of seed position 7
+seed_pos_7_C,Seed (Pos 7),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 7,One-hot encoding of seed position 7
+seed_pos_7_G,Seed (Pos 7),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 7,One-hot encoding of seed position 7
+seed_pos_7_T,Seed (Pos 7),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 7 (favorable seed base),One-hot encoding of seed position 7
+seed_pos_8_A,Seed (Pos 8),Positional Nucleotide,Binary,"{0, 1}",Adenine at protospacer position 8 (seed junction boundary base),One-hot encoding of seed position 8
+seed_pos_8_C,Seed (Pos 8),Positional Nucleotide,Binary,"{0, 1}",Cytosine at protospacer position 8,One-hot encoding of seed position 8
+seed_pos_8_G,Seed (Pos 8),Positional Nucleotide,Binary,"{0, 1}",Guanine at protospacer position 8,One-hot encoding of seed position 8
+seed_pos_8_T,Seed (Pos 8),Positional Nucleotide,Binary,"{0, 1}",Thymine at protospacer position 8,One-hot encoding of seed position 8
