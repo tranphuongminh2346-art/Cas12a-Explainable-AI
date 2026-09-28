@@ -109,6 +109,7 @@ scripts/sync_results.*
 scripts/copy_figures_to_manuscript.*
 scripts/organize_files.*
 scripts/sync_all_figures_and_tables.bat
+scripts/build_submission_package.*
 
 # Legacy local cleanup / cloud-run artifacts excluded from public GitHub release
 clean_and_organize_workspace.bat
