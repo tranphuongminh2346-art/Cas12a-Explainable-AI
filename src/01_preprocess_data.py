@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 01_preprocess_data.py
-Author: Minh Tran (UWA / Independent Researcher)
+Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
 
 Description:
   Reads the raw high-throughput screening data (Kim et al. 2018 Supplementary
@@ -151,6 +151,17 @@ def clean_and_standardize_dataset(df):
 
 def main():
     os.makedirs(PROCESSED_DIR, exist_ok=True)
+    if not os.path.exists(RAW_DATA_PATH):
+        if os.path.exists(OUTPUT_CLEAN_CSV):
+            print(f"[*] Raw Excel file not found at: {RAW_DATA_PATH}")
+            print(f"[OK] Pre-processed dataset already available at:\n    {OUTPUT_CLEAN_CSV}")
+            print(f"[*] Skipping raw preprocessing. Downstream pipeline can proceed directly.")
+            return
+        else:
+            print(f"[!] Error: Neither raw file nor pre-processed dataset found.")
+            print(f"    Please place 'Kim_2018_Supplementary_Table_1_HT1.xlsx' into 'data/raw/'")
+            print(f"    or provide 'clean_kim_2018_targets.csv' in 'data/processed/'.")
+            sys.exit(1)
     try:
         raw_df = inspect_and_load_excel(RAW_DATA_PATH)
         clean_df = clean_and_standardize_dataset(raw_df)

@@ -7,14 +7,14 @@ setup(
     name="cas12a-xai",
     version="0.1.0",
     author="Minh Tran",
-    author_email="minh.tran@research.uwa.edu.au",
+    author_email="tranphuongminh2346@gmail.com",
     description="Explainable Machine Learning for CRISPR-Cas12a On-Target Cleavage Efficiency",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/minhtran-bio/cas12a-xai",
+    url="https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI",
     project_urls={
-        "Bug Tracker": "https://github.com/minhtran-bio/cas12a-xai/issues",
-        "Documentation": "https://github.com/minhtran-bio/cas12a-xai#readme",
+        "Bug Tracker": "https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI/issues",
+        "Documentation": "https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI#readme",
     },
     classifiers=[
         "Development Status :: 4 - Beta",

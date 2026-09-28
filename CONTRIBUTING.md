@@ -5,7 +5,7 @@ We welcome contributions from computational biologists, bioinformaticians, and m
 ## How to Contribute
 
 ### 1. Reporting Bugs & Asking Questions
-- Search the [Issues](https://github.com/minhtran-bio/cas12a-xai/issues) tracker to see if the issue has already been reported.
+- Search the [Issues](https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI/issues) tracker to see if the issue has already been reported.
 - If not, open a new issue describing:
   - The operating system and Python version
   - Exact command or code snippet executed
@@ -15,8 +15,8 @@ We welcome contributions from computational biologists, bioinformaticians, and m
 1. Fork the repository on GitHub.
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/<your-username>/cas12a-xai.git
-   cd cas12a-xai
+   git clone https://github.com/<your-username>/Cas12a-Explainable-AI.git
+   cd Cas12a-Explainable-AI
    ```
 3. Create a feature branch:
    ```bash

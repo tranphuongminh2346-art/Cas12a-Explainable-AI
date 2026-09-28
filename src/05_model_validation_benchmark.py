@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 05_model_validation_benchmark.py
-Author: Minh Tran (UWA / Independent Researcher)
+Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
 
 Description:
   Performs rigorous scientific validation and literature benchmarking on the

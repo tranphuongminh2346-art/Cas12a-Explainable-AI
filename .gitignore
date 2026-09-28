@@ -100,8 +100,13 @@ ROADMAP_3_MONTHS.md
 manuscript/
 
 # Internal Developer & Runner Scripts (Local automation & Kaggle runners)
-scripts/
-
+scripts/run_kaggle.*
+scripts/download_skills.*
+scripts/download_skills_pure.*
+scripts/sync_results.*
+scripts/copy_figures_to_manuscript.*
+scripts/organize_files.*
+scripts/sync_all_figures_and_tables.bat
 # Obsolete / Internal Notebooks & Metadata
 notebooks/Cas12a_XAI_Pipeline.ipynb
 notebooks/Cas12a_Validation_Benchmark.ipynb

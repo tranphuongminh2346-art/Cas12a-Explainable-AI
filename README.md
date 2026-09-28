@@ -6,9 +6,9 @@
 [![Architecture: LightGBM + TreeSHAP](https://img.shields.io/badge/Architecture-LightGBM%20%2B%20TreeSHAP-orange.svg)](#overview)
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](#testing)
 
-> **Author**: Minh Tran  
-> *School of Biomedical Sciences, University of Western Australia / Independent Researcher*  
-> *Correspondence: minh.tran@research.uwa.edu.au*  
+> **Author**: Minh Tran<br>
+> *School of Molecular Sciences, University of Western Australia*<br>
+> *Correspondence: tranphuongminh2346@gmail.com*
 
 ---
 
@@ -68,8 +68,8 @@ Evaluated across **11,365 canonical targets** (5'-TTTV-3' PAM) from human high-t
 
 ### Install via pip (Development / Editable Mode)
 ```bash
-git clone https://github.com/minhtran-bio/cas12a-xai.git
-cd cas12a-xai
+git clone https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI.git
+cd Cas12a-Explainable-AI
 pip install -e .
 ```
 
@@ -226,7 +226,7 @@ If you use `cas12a-xai` or our biophysical findings in your research, please cit
   author={Tran, Minh},
   journal={Bioinformatics (In Review)},
   year={2026},
-  url={https://github.com/minhtran-bio/cas12a-xai}
+  url={https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI}
 }
 ```
 

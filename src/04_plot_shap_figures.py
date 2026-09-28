@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 04_plot_shap_figures.py
-Author: Minh Tran (UWA / Independent Researcher)
+Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
 
 Description:
   Computes exact TreeSHAP values for the trained model and produces

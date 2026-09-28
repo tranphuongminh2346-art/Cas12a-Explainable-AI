@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "cas12a-xai"
 version = "0.1.0"
 authors = [
-    { name="Minh Tran", email="minh.tran@research.uwa.edu.au" },
+    { name="Minh Tran", email="tranphuongminh2346@gmail.com" },
 ]
 description = "Explainable Machine Learning for CRISPR-Cas12a On-Target Cleavage Efficiency"
 readme = "README.md"

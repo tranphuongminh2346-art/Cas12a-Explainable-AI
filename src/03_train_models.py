@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 03_train_models.py
-Author: Minh Tran (UWA / Independent Researcher)
+Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
 
 Description:
   Trains and validates the biophysically-guided Cas12a prediction framework
