@@ -98,6 +98,8 @@ ROADMAP_3_MONTHS.md
 
 # Private Journal Submission Package (Submit to Journal Portal / ScholarOne, NOT GitHub)
 manuscript/
+Submission_Package_Bioinformatics/
+submission_package*/
 
 # Internal Developer & Runner Scripts (Local automation & Kaggle runners)
 scripts/run_kaggle.*
@@ -107,6 +109,14 @@ scripts/sync_results.*
 scripts/copy_figures_to_manuscript.*
 scripts/organize_files.*
 scripts/sync_all_figures_and_tables.bat
+
+# Legacy local cleanup / cloud-run artifacts excluded from public GitHub release
+clean_and_organize_workspace.bat
+sync_results.bat
+kaggle_error_log/
+src/download_datasets.py
+src/feature_engineering.py
+
 # Obsolete / Internal Notebooks & Metadata
 notebooks/Cas12a_XAI_Pipeline.ipynb
 notebooks/Cas12a_Validation_Benchmark.ipynb
