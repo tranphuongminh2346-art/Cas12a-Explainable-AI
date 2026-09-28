@@ -38,7 +38,7 @@ PACKAGE_RESULTS = os.path.join(BASE_DIR, "cas12a_10fold_results_package", "resul
 def main():
     print("=" * 70)
     print("   CRISPR-Cas12a Master Figures & Tables Synchronization Suite")
-    print("   Author: Minh Tran (UWA / Independent Researcher)")
+    print("   Author: Minh Tran (School of Molecular Sciences, University of Western Australia)")
     print("=" * 70)
 
     # 1. Generate Figure S1 and Figure 2
