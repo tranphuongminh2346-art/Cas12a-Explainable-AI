@@ -2,7 +2,6 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: In Review](https://img.shields.io/badge/Manuscript-Targeting%20Q1%2FQ2%20Bioinformatics-green.svg)](#citation)
 [![Architecture: LightGBM + TreeSHAP](https://img.shields.io/badge/Architecture-LightGBM%20%2B%20TreeSHAP-orange.svg)](#overview)
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](#testing)
 
