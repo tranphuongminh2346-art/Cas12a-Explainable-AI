@@ -96,8 +96,9 @@ ROADMAP_3_MONTHS.md
 .claude/
 .cursor/
 
-# Private Journal Submission Package (Submit to Journal Portal / ScholarOne, NOT GitHub)
+# Private Journal Submission Package (Submit to Journal Editorial Manager, NOT GitHub)
 manuscript/
+Submission_Package_Genomics_Elsevier/
 Submission_Package_Bioinformatics/
 submission_package*/
 
@@ -110,6 +111,7 @@ scripts/copy_figures_to_manuscript.*
 scripts/organize_files.*
 scripts/sync_all_figures_and_tables.bat
 scripts/build_submission_package.*
+scripts/audit_submission_and_docx.*
 
 # Legacy local cleanup / cloud-run artifacts excluded from public GitHub release
 clean_and_organize_workspace.bat
@@ -130,5 +132,4 @@ data/processed/
 data/kaggle_dataset/
 cas12a_10fold_results_package/
 references/
-Author guidelines _ Bioinformatics _ Oxford Academic.pdf
 *.pdf
