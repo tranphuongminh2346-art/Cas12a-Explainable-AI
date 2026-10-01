@@ -146,6 +146,7 @@ def main():
         print(f"  [OK] Verified results file: {rf_name}")
 
     # 5. Harmonize All Notebooks
+    import re
     nb_dir = os.path.join(BASE_DIR, "notebooks")
     if os.path.exists(nb_dir):
         for nb_file in os.listdir(nb_dir):
@@ -155,44 +156,43 @@ def main():
             try:
                 with open(nb_path, "r", encoding="utf-8") as f:
                     content = f.read()
-                modified = False
-                axis_replacements = [
-                    (
-                        'axes[0, 0].set_xlabel("Predicted On-Target Efficiency (%)")',
-                        'axes[0, 0].set_xlabel("Predicted Guide Efficiency (Arbitrary / Indel Score)")',
-                    ),
-                    (
-                        'axes[0, 0].set_xlabel(\\"Predicted On-Target Efficiency (%)\\")',
-                        'axes[0, 0].set_xlabel(\\"Predicted Guide Efficiency (Arbitrary / Indel Score)\\")',
-                    ),
-                    (
-                        'School of Molecular Sciences & Centre for Applied Bioinformatics, UWA / Independent Researcher',
-                        'School of Molecular Sciences, University of Western Australia',
-                    ),
-                    (
-                        'University of Western Australia / Independent Researcher',
-                        'School of Molecular Sciences, University of Western Australia',
-                    ),
-                    (
-                        'School of Molecular Sciences, The University of Western Australia',
-                        'School of Molecular Sciences, University of Western Australia',
-                    ),
-                    (
-                        'Minh Tran (Independent Researcher)',
-                        'Minh Tran (School of Molecular Sciences, University of Western Australia)',
-                    ),
-                ]
-                for old, new in axis_replacements:
-                    if old in content:
-                        content = content.replace(old, new)
-                        modified = True
+                original_content = content
+                
+                # Standardize axis labels
+                content = content.replace(
+                    'axes[0, 0].set_xlabel("Predicted On-Target Efficiency (%)")',
+                    'axes[0, 0].set_xlabel("Predicted Guide Efficiency (Arbitrary / Indel Score)")'
+                )
+                content = content.replace(
+                    'axes[0, 0].set_xlabel(\\"Predicted On-Target Efficiency (%)\\")',
+                    'axes[0, 0].set_xlabel(\\"Predicted Guide Efficiency (Arbitrary / Indel Score)\\")'
+                )
+                
+                # Regex-based author affiliation standardization
+                content = re.sub(
+                    r'(\*\*Author\*\*:?\s*Minh Tran\s*\()[^)]*(\))',
+                    r'\1Independent Researcher, Perth, Western Australia, Australia\2',
+                    content
+                )
+                content = re.sub(
+                    r'(Author:\s*Minh Tran\s*\()[^)]*(\))',
+                    r'\1Independent Researcher, Perth, Western Australia, Australia\2',
+                    content
+                )
+                
+                # Harmonize target journal
+                content = re.sub(
+                    r'(\*\*Target Journal\*\*:?\s*)[^\n\\]+',
+                    r'\1Computational Biology & Bioinformatics Journal (Traditional / Subscription Route)',
+                    content
+                )
+                
                 if "'poly_t_terminator': int('TTTT' in sp)" in content and "# 23-bp target window" not in content:
                     content = content.replace(
                         "'poly_t_terminator': int('TTTT' in sp)",
                         "'poly_t_terminator': int('TTTT' in sp)  # 23-bp target window (n=1,042; in-guide n=927 drives -38.38% deficit)"
                     )
-                    modified = True
-                if modified:
+                if content != original_content:
                     with open(nb_path, "w", encoding="utf-8") as f:
                         f.write(content)
                     print(f"  [+] Harmonized notebook: {nb_file}")

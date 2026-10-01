@@ -1,4 +1,4 @@
-Model Configuration,Number of Features,Spearman Correlation (ρ),Spearman Drop (Δρ),Relative Degradation (%),Biophysical Role
+Model Configuration,Number of Features,Spearman Correlation (rho),Spearman Drop (Delta rho),Relative Degradation (%),Biophysical Role
 Full Biophysical Model (Baseline),57,0.5245,0.0000,0.00%,Full unified biophysical ensemble
 Ablation 1: No Stacking Thermodynamics,53,0.5158,-0.0087,-1.66%,Excludes SantaLucia deltaG values
 Ablation 2: No Polarity Gradient,53,0.523,-0.0014,-0.27%,Excludes melting temperatures and deltaTm
