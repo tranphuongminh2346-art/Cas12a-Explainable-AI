@@ -1,6 +1,6 @@
 # cas12a-xai: Biophysically-Guided Explainable Machine Learning for CRISPR-Cas12a Cleavage Efficiency
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23016967.svg)](https://doi.org/10.5281/zenodo.23016967)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23016966.svg)](https://doi.org/10.5281/zenodo.23016966)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: LightGBM + TreeSHAP](https://img.shields.io/badge/Architecture-LightGBM%20%2B%20TreeSHAP-orange.svg)](#overview)
@@ -226,7 +226,7 @@ If you use `cas12a-xai` or our biophysical findings in your research, please cit
   author={Tran, Minh},
   journal={Zenodo software archive},
   year={2026},
-  doi={10.5281/zenodo.23016967},
+  doi={10.5281/zenodo.23016966},
   url={https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI}
 }
 ```
