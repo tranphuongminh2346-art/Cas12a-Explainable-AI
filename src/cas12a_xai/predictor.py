@@ -202,9 +202,9 @@ class Cas12aPredictor:
         # 5. Thermodynamic polarity gradient
         grad = feats['tm_gradient_seed_vs_distal']
         if grad > 0:
-            recommendations.append(f"Favorable kinetic polarity gradient (Delta_Tm = +{grad:.1f}°C): Seed is thermodynamically more stable than distal region, facilitating rapid forward R-loop zippering.")
+            recommendations.append(f"Favorable kinetic polarity gradient (Delta_Tm = +{grad:.1f} deg C): Seed is thermodynamically more stable than distal region, facilitating rapid forward R-loop zippering.")
         elif grad < -5:
-            flags.append(f"INVERTED THERMODYNAMIC GRADIENT: Delta_Tm = {grad:.1f}°C")
+            flags.append(f"INVERTED THERMODYNAMIC GRADIENT: Delta_Tm = {grad:.1f} deg C")
             recommendations.append("Distal domain is significantly more GC-rich than the seed, risking kinetic stalling or hindered conformational lock.")
 
         if has_guide_polyt:

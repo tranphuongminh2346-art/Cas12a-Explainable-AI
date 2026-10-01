@@ -5,10 +5,10 @@ gc_spacer,Spacer (1 to 23),Sequence Composition,Float,"[0.0, 1.0]",Overall guide
 gc_seed,Seed (1 to 8),Sequence Composition,Float,"[0.0, 1.0]",GC richness in seed domain governs R-loop nucleation barrier,"(Count(G) + Count(C)) / 8"
 gc_trunk,Trunk (9 to 16),Sequence Composition,Float,"[0.0, 1.0]",Intermediate R-loop progression zone linking nucleation to distal cleavage,"(Count(G) + Count(C)) / 8"
 gc_distal,Distal (17 to 23),Sequence Composition,Float,"[0.0, 1.0]",Distal base pairing stabilizes non-target strand displacement into the RuvC pocket,"(Count(G) + Count(C)) / 7"
-tm_spacer,Spacer (1 to 23),Thermodynamics,Float,°C,Melting temperature of full 23-nt RNA:DNA guide:target duplex,"Nearest-neighbor / Wallace rule: 64.9 + 41*(GC-16.4)/N"
-tm_seed,Seed (1 to 8),Thermodynamics,Float,°C,Melting temperature of 8-nt seed domain governing initial unwinding,"Wallace rule: (wA+xT)*2 + (yG+zC)*4"
-tm_distal,Distal (17 to 23),Thermodynamics,Float,°C,Melting temperature of distal domain regulating conformational cleavage lock,"Wallace rule: (wA+xT)*2 + (yG+zC)*4"
-tm_gradient_seed_vs_distal,Kinetic Polarity,Thermodynamics,Float,°C,Directional thermodynamic gradient driving forward R-loop propagation,tm_seed - tm_distal
+tm_spacer,Spacer (1 to 23),Thermodynamics,Float,deg C,Melting temperature of full 23-nt RNA:DNA guide:target duplex,"Nearest-neighbor / Wallace rule: 64.9 + 41*(GC-16.4)/N"
+tm_seed,Seed (1 to 8),Thermodynamics,Float,deg C,Melting temperature of 8-nt seed domain governing initial unwinding,"Wallace rule: (wA+xT)*2 + (yG+zC)*4"
+tm_distal,Distal (17 to 23),Thermodynamics,Float,deg C,Melting temperature of distal domain regulating conformational cleavage lock,"Wallace rule: (wA+xT)*2 + (yG+zC)*4"
+tm_gradient_seed_vs_distal,Kinetic Polarity,Thermodynamics,Float,deg C,Directional thermodynamic gradient driving forward R-loop propagation,tm_seed - tm_distal
 stacking_dg_seed,Seed (1 to 8),Thermodynamics,Float,kcal/mol,Unified nearest-neighbor base stacking free energy in seed domain,Sum of SantaLucia (1998) deltaG values for 7 dinucleotide steps
 stacking_dg_trunk,Trunk (9 to 16),Thermodynamics,Float,kcal/mol,Base stacking free energy across middle trunk domain,Sum of SantaLucia (1998) deltaG values for 7 dinucleotide steps
 stacking_dg_distal,Distal (17 to 23),Thermodynamics,Float,kcal/mol,Base stacking free energy across distal terminal pairing region,Sum of SantaLucia (1998) deltaG values for 6 dinucleotide steps
