@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="cas12a-xai",
-    version="0.1.0",
+    version="0.1.2",
     author="Minh Tran",
     author_email="tranphuongminh2346@gmail.com",
     description="Explainable Machine Learning for CRISPR-Cas12a On-Target Cleavage Efficiency",

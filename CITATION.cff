@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "cas12a-xai: Biophysically-Guided Explainable Machine Learning for CRISPR-Cas12a Cleavage Efficiency"
+type: software
+authors:
+  - family-names: Tran
+    given-names: Minh
+    orcid: "https://orcid.org/0009-0007-8003-7995"
+    affiliation: "Independent Researcher, Perth, Western Australia, Australia"
+version: "0.1.2"
+date-released: "2026-10-01"
+license: MIT
+repository-code: "https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI"
+doi: "10.5281/zenodo.23016966"

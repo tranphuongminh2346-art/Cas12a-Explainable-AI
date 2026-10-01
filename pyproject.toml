@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cas12a-xai"
-version = "0.1.0"
+version = "0.1.2"
 authors = [
     { name="Minh Tran", email="tranphuongminh2346@gmail.com" },
 ]

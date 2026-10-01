@@ -1,0 +1,26 @@
+{
+  "title": "cas12a-xai: Biophysically-Guided Explainable Machine Learning for CRISPR-Cas12a Cleavage Efficiency",
+  "upload_type": "software",
+  "publication_date": "2026-10-01",
+  "version": "0.1.2",
+  "creators": [
+    {
+      "name": "Tran, Minh",
+      "orcid": "0009-0007-8003-7995",
+      "affiliation": "Independent Researcher, Perth, Western Australia, Australia"
+    }
+  ],
+  "description": "cas12a-xai is an open-source, biophysically-grounded explainable machine learning framework and design toolkit for predicting and mechanistically interpreting CRISPR-Cas12a guide RNA on-target cleavage efficiency.",
+  "license": "MIT",
+  "keywords": [
+    "CRISPR",
+    "Cas12a",
+    "Cpf1",
+    "explainable AI",
+    "machine learning",
+    "TreeSHAP",
+    "thermodynamics",
+    "bioinformatics",
+    "computational genomics"
+  ]
+}

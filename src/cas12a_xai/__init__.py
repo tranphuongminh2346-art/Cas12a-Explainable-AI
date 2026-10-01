@@ -17,7 +17,7 @@ from .features import (
 )
 from .predictor import Cas12aPredictor, predict_efficiency, explain_guide
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __author__ = "Minh Tran"
 __license__ = "MIT"
 
