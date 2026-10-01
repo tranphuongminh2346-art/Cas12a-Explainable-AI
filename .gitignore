@@ -126,6 +126,7 @@ notebooks/kernel-metadata.json
 
 # Raw screening data & intermediate packages (Keep only data/results/)
 data/raw/
+data/processed/
 data/kaggle_dataset/
 cas12a_10fold_results_package/
 references/

@@ -1,7 +1,7 @@
 """
 cas12a_xai: Explainable Machine Learning for CRISPR-Cas12a On-Target Cleavage Efficiency.
 
-Developed by Minh Tran (School of Molecular Sciences, University of Western Australia).
+Developed by Minh Tran (Independent Researcher, Perth, Western Australia, Australia).
 Integrates SantaLucia nearest-neighbor thermodynamics, seed-distal polarity gradients,
 domain-segmented feature engineering, and TreeSHAP feature attributions.
 """

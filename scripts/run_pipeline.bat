@@ -7,7 +7,7 @@ set PYTHONPATH=%CD%\src;%PYTHONPATH%
 
 echo ====================================================================
 echo        CRISPR-Cas12a Explainable AI Machine Learning Pipeline
-echo        Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
+echo        Author: Minh Tran (Independent Researcher, Perth, Western Australia, Australia)
 echo ====================================================================
 echo [*] Thu muc lam viec: %CD%
 

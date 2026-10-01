@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 05_model_validation_benchmark.py
-Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
+Author: Minh Tran (Independent Researcher, Perth, Western Australia, Australia)
 
 Description:
   Performs rigorous scientific validation and literature benchmarking on the
@@ -212,12 +212,12 @@ def compile_literature_benchmark_table(our_metrics):
                 "Model Architecture": "Gradient Boosted Trees (LightGBM)",
                 "Training & Evaluation Datasets": "11,365 canonical TTTV targets (Kim et al. 2018 HT1; 10-Fold Stratified CV)",
                 "Prediction Task & Framing": "Full continuous regression + functional binary classification (>=20% Indel)",
-                "Spearman Correlation (ρ)": f"{our_metrics['spearman_rho']:.3f} (CV mean)",
+                "Spearman Correlation (rho)": f"{our_metrics['spearman_rho']:.3f} (CV mean)",
                 "Pearson Correlation (r)": f"{our_metrics['pearson_r']:.3f} (CV mean)",
                 "ROC-AUC": f"{our_metrics.get('ROC_AUC_20.0', 0.801):.3f} (Indel >=20%)",
                 "Interpretability Framework": "Exact TreeSHAP (Axiomatic local & global attributions + 2-way epistasis)",
                 "Hardware Requirement & Deployment": "CPU-only (~150-600 ms per 1k guides; hardware-dependent; no GPU required)",
-                "Key Focus & Methodological Trade-off": "Biophysically interpretable mechanistic modeling (nearest-neighbor ΔG° stacking + directional ΔTm polarity gradient + Pol III arrest); transparent decision manifold"
+                "Key Focus & Methodological Trade-off": "Biophysically interpretable mechanistic modeling (nearest-neighbor DeltaG stacking + directional Delta_Tm polarity gradient + Pol III arrest); transparent decision manifold"
             },
             {
                 "Model Name": "DeepCas12a",
@@ -225,7 +225,7 @@ def compile_literature_benchmark_table(our_metrics):
                 "Model Architecture": "Hybrid CNN-BiLSTM + Multi-Head Vision Transformer",
                 "Training & Evaluation Datasets": "Trained on Kim HT1; evaluated on holdout test set (n=1,292) and independent sets (HT2, HT3)",
                 "Prediction Task & Framing": "Continuous indel frequency regression across 34bp one-hot + chromatin accessibility channels",
-                "Spearman Correlation (ρ)": "0.630 (Holdout test); 0.538 (HT2); 0.313 (HT3)",
+                "Spearman Correlation (rho)": "0.630 (Holdout test); 0.538 (HT2); 0.313 (HT3)",
                 "Pearson Correlation (r)": "0.631 (Holdout test)",
                 "ROC-AUC": "0.868 (Holdout test; AP=0.783)",
                 "Interpretability Framework": "Gradient-based saliency heatmaps",
@@ -234,12 +234,12 @@ def compile_literature_benchmark_table(our_metrics):
             },
             {
                 "Model Name": "DeepCpf1",
-                "Primary Reference": "Kim et al. (2018), Nature Biotechnology 36:239–241",
+                "Primary Reference": "Kim et al. (2018), Nature Biotechnology 36:239-241",
                 "Model Architecture": "Convolutional Neural Network (CNN; 1D-Conv layers)",
                 "Training & Evaluation Datasets": "16,292 synthetic targets in HEK293T cells (HT1); validated on HT2 (n=2,963) and HT3 (n=1,251)",
                 "Prediction Task & Framing": "Continuous indel regression + classification across synthetic and endogenous loci",
-                "Spearman Correlation (ρ)": "~0.60–0.70 (Synthetic test sets)",
-                "Pearson Correlation (r)": "~0.60–0.70",
+                "Spearman Correlation (rho)": "~0.60-0.70 (Synthetic test sets)",
+                "Pearson Correlation (r)": "~0.60-0.70",
                 "ROC-AUC": "0.840 (Synthetic test set)",
                 "Interpretability Framework": "In silico single-nucleotide mutagenesis",
                 "Hardware Requirement & Deployment": "GPU required (Keras/Theano CNN)",
@@ -251,7 +251,7 @@ def compile_literature_benchmark_table(our_metrics):
                 "Model Architecture": "Support Vector Machine (SVM with RBF Kernel)",
                 "Training & Evaluation Datasets": "11,365 canonical TTTV gRNAs from Kim HT1 screen",
                 "Prediction Task & Framing": "Binary classification of extreme activity (Top 10% vs Bottom 10% active guides)",
-                "Spearman Correlation (ρ)": "N/A (Trained as top/bottom classification task)",
+                "Spearman Correlation (rho)": "N/A (Trained as top/bottom classification task)",
                 "Pearson Correlation (r)": "N/A",
                 "ROC-AUC": "0.920 (10-fold CV on top/bottom 10%); 0.780 (Independent test)",
                 "Interpretability Framework": "SVM feature weight analysis",
@@ -264,7 +264,7 @@ def compile_literature_benchmark_table(our_metrics):
                 "Model Architecture": "Random Forest Regressor (450 decision trees)",
                 "Training & Evaluation Datasets": "2,061 depletion targets (Liu et al.); validated on Kim endogenous human loci",
                 "Prediction Task & Framing": "Cross-platform prediction focused on native endogenous genomic loci",
-                "Spearman Correlation (ρ)": "N/A",
+                "Spearman Correlation (rho)": "N/A",
                 "Pearson Correlation (r)": "0.578 (HEK plasmid); 0.404 (HEK lentivirus); 0.409 (HCT116)",
                 "ROC-AUC": "N/A",
                 "Interpretability Framework": "Gini impurity / Mean decrease in impurity",
@@ -381,12 +381,12 @@ def generate_figure_2(df, overall_metrics, pam_metrics, bench_df):
     ax.set_title("D. Model Positioning & Literature Context", fontsize=13, fontweight="bold", pad=10)
     ax.set_yticks(y_pos)
     ax.set_yticklabels(models, fontsize=11, fontweight='semibold')
-    ax.set_xlabel("Reported Spearman Rank Correlation (\u03c1)", fontsize=11)
+    ax.set_xlabel("Reported Spearman Rank Correlation (rho)", fontsize=11)
     ax.set_xlim(0.0, 0.85)
     ax.grid(True, axis='x')
 
     for bar, val in zip(bars, rhos):
-        ax.text(val + 0.015, bar.get_y() + bar.get_height()/2., f"\u03c1 = {val:.3f}",
+        ax.text(val + 0.015, bar.get_y() + bar.get_height()/2., f"rho = {val:.3f}",
                 ha='left', va='center', fontsize=10, fontweight='bold')
                 
     plt.tight_layout()

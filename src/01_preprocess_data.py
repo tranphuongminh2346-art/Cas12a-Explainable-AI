@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 01_preprocess_data.py
-Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
+Author: Minh Tran (Independent Researcher, Perth, Western Australia, Australia)
 
 Description:
   Reads the raw high-throughput screening data (Kim et al. 2018 Supplementary

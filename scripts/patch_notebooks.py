@@ -32,19 +32,27 @@ def patch_all_notebooks():
                 ),
                 (
                     'School of Molecular Sciences & Centre for Applied Bioinformatics, UWA / Independent Researcher',
-                    'School of Molecular Sciences, University of Western Australia',
+                    'Independent Researcher, Perth, Western Australia, Australia',
                 ),
                 (
                     'University of Western Australia / Independent Researcher',
-                    'School of Molecular Sciences, University of Western Australia',
+                    'Independent Researcher, Perth, Western Australia, Australia',
                 ),
                 (
                     'School of Molecular Sciences, The University of Western Australia',
+                    'Independent Researcher, Perth, Western Australia, Australia',
+                ),
+                (
                     'School of Molecular Sciences, University of Western Australia',
+                    'Independent Researcher, Perth, Western Australia, Australia',
+                ),
+                (
+                    'Minh Tran (School of Molecular Sciences, University of Western Australia)',
+                    'Minh Tran (Independent Researcher, Perth, Western Australia, Australia)',
                 ),
                 (
                     'Minh Tran (Independent Researcher)',
-                    'Minh Tran (School of Molecular Sciences, University of Western Australia)',
+                    'Minh Tran (Independent Researcher, Perth, Western Australia, Australia)',
                 ),
             ]
             for old, new in axis_replacements:

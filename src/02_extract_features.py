@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 02_extract_features.py
-Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
+Author: Minh Tran (Independent Researcher, Perth, Western Australia, Australia)
 
 Description:
   Computes comprehensive biophysical, sequence, and thermodynamic features

@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: 01b_exploratory_data_analysis.py
-Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
+Author: Minh Tran (Independent Researcher, Perth, Western Australia, Australia)
 
 Description:
   Executes comprehensive Exploratory Data Analysis (EDA) on the high-throughput

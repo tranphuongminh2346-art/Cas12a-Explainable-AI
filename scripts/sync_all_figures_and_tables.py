@@ -2,7 +2,7 @@
 =============================================================================
 CRISPR-Cas12a Explainable AI Project
 Module: sync_all_figures_and_tables.py
-Author: Minh Tran (School of Molecular Sciences, University of Western Australia)
+Author: Minh Tran (Independent Researcher, Perth, Western Australia, Australia)
 
 Description:
   1. Generates Supplementary Figure S1 (Protospacer Odds Ratios & Spearman Atlas).
@@ -38,7 +38,7 @@ PACKAGE_RESULTS = os.path.join(BASE_DIR, "cas12a_10fold_results_package", "resul
 def main():
     print("=" * 70)
     print("   CRISPR-Cas12a Master Figures & Tables Synchronization Suite")
-    print("   Author: Minh Tran (School of Molecular Sciences, University of Western Australia)")
+    print("   Author: Minh Tran (Independent Researcher, Perth, Western Australia, Australia)")
     print("=" * 70)
 
     # 1. Generate Figure S1 and Figure 2

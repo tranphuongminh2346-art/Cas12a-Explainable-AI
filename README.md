@@ -7,7 +7,7 @@
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](#testing)
 
 > **Author**: Minh Tran<br>
-> *School of Molecular Sciences, University of Western Australia*<br>
+> *Independent Researcher, Perth, Western Australia, Australia*<br>
 > *Correspondence: tranphuongminh2346@gmail.com*
 
 ---
@@ -20,17 +20,17 @@ Unlike opaque deep neural networks that act as "black boxes", **cas12a-xai** mod
 
 ```
                     CRISPR-Cas12a TARGET SITE (34 bp)
- ┌─────────┬──────────────┬─────────────────────────┬──────────────┐
- │ 5' Flank│  PAM (4 bp)  │     SPACER (23 bp)      │ 3' Flank     │
- │ (-8..-5)│   5'-TTTV    │ Seed(1-8) Trunk(9-16) Distal(17-23)    │ (24..26)     │
- └─────────┴──────────────┴─────────────────────────┴──────────────┘
-        │          │                   │
-        ▼          ▼                   ▼
- [Upstream GC] [PAM PI Cleft] [Nearest-Neighbor ΔG°] ───► [LightGBM Ensemble]
-                              [Seed-Distal ΔTm Grad]             │
-                              [Poly-T Terminator]                ▼
-                                                       [Predicted Indel %]
-                                                       [TreeSHAP Attribution]
+ +---------+--------------+-------------------------+--------------+
+ | 5' Flank|  PAM (4 bp)  |     SPACER (23 bp)      | 3' Flank     |
+ | (-8..-5)|   5'-TTTV    | Seed(1-8) Trunk(9-16) Distal(17-23)    | (24..26)     |
+ +---------+--------------+-------------------------+--------------+
+        |          |                   |
+        v          v                   v
+ [Upstream GC] [PAM PI Cleft] [Nearest-Neighbor DeltaG] ---> [LightGBM Ensemble]
+                              [Seed-Distal Delta_Tm Grad]            |
+                              [Poly-T Terminator]                    v
+                                                        [Predicted Indel %]
+                                                        [TreeSHAP Attribution]
 ```
 
 ---
@@ -38,9 +38,9 @@ Unlike opaque deep neural networks that act as "black boxes", **cas12a-xai** mod
 ## Key Biophysical Discoveries
 
 1. **Catastrophic Poly-T Repression (-35.2% Indel)**: Internal `TTTT` tracts act as intrinsic RNA Polymerase III transcription terminators, truncating nascent crRNA transcripts prior to ribonucleoprotein assembly.
-2. **Duplex Base-Stacking Stabilization (+15.3% Indel)**: Favorable nearest-neighbor stacking free energies ($\Delta G^\circ_{\text{spacer}} < -32\text{ kcal/mol}$) promote stable R-loop formation and non-target strand displacement.
-3. **Seed-to-Distal Kinetic Polarity Gradient (+8.4% Indel)**: A positive melting temperature gradient ($\Delta T_m = T_{m, \text{seed}} - T_{m, \text{distal}} > 0$) ensures low activation energy for nucleation while avoiding hyper-stable distal duplexes that stall the RuvC catalytic release.
-4. **Epistatic PAM $\times$ Seed Architecture**: TTTC PAM allows flexible seed initiation, whereas suboptimal TTTG PAM demands rigid base stacking ($\Delta G^\circ_{\text{seed}} < -9.5\text{ kcal/mol}$) to achieve productive cleavage.
+2. **Duplex Base-Stacking Stabilization (+15.3% Indel)**: Favorable nearest-neighbor stacking free energies (DeltaG_spacer < -32 kcal/mol) promote stable R-loop formation and non-target strand displacement.
+3. **Seed-to-Distal Kinetic Polarity Gradient (+8.4% Indel)**: A positive melting temperature gradient (Delta_Tm = Tm_seed - Tm_distal > 0 deg C) ensures low activation energy for nucleation while avoiding hyper-stable distal duplexes that stall RuvC catalytic release.
+4. **Epistatic PAM x Seed Architecture**: TTTC PAM allows flexible seed initiation, whereas suboptimal TTTG PAM demands rigid base stacking (DeltaG_seed < -9.5 kcal/mol) to achieve productive cleavage.
 5. **Position 1 Thymine Repression (-10.1% Indel)**: A Thymine directly adjacent to the PAM severely destabilizes the initial unwinding bubble.
 
 ---
@@ -49,7 +49,7 @@ Unlike opaque deep neural networks that act as "black boxes", **cas12a-xai** mod
 
 Evaluated across **11,365 canonical targets** (5'-TTTV-3' PAM) from human high-throughput screening data (Kim et al., 2018; 10-Fold Stratified Cross-Validation):
 
-| Cohort | Sample Size ($n$) | Spearman $\rho$ | Pearson $r$ | ROC-AUC ($\ge 20\%$) | MAE (%) | RMSE (%) |
+| Cohort | Sample Size (n) | Spearman rho | Pearson r | ROC-AUC (>= 20%) | MAE (%) | RMSE (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **TTTA PAM** | 1,400 | **0.530** | **0.576** | 0.812 | 20.53 | 25.42 |
 | **TTTC PAM** | 5,068 | **0.518** | **0.562** | 0.807 | 19.85 | 24.58 |
@@ -110,7 +110,7 @@ Biophysical Properties:
 Actionable Design Recommendations:
   [+] Optimal PAM subclass: TTTC maximizes catalytic cleft accommodation (+4.2% predicted gain).
   [+] Favorable seed initiation: Base 'G' at position 1 stabilizes the opening bubble.
-  [+] Favorable kinetic polarity gradient (Delta_Tm = +2.0°C): Seed is thermodynamically more stable than distal region, facilitating rapid forward R-loop zippering.
+  [+] Favorable kinetic polarity gradient (Delta_Tm = +2.0 deg C): Seed is thermodynamically more stable than distal region, facilitating rapid forward R-loop zippering.
 ======================================================================
 ```
 
@@ -152,7 +152,7 @@ print(f"Predicted Indel Frequency: {indel_eff:.2f}%")
 # 2. Comprehensive Explainability & Biophysical Breakdown
 report = explain_guide(sequence)
 print(f"Activity Tier: {report['activity_tier']}")
-print(f"Polarity Gradient Delta_Tm: {report['biophysical_metrics']['tm_polarity_gradient']} °C")
+print(f"Polarity Gradient Delta_Tm: {report['biophysical_metrics']['tm_polarity_gradient']} deg C")
 for rec in report['design_recommendations']:
     print(f" -> {rec}")
 
@@ -167,7 +167,7 @@ print(f"Base Stacking Free Energy: {features['stacking_dg_spacer']} kcal/mol")
 ```
 
 > **Dual-Engine Architecture & Explainability**:
-> 1. **Calibrated Biophysical Scoring Engine (Default)**: Rapid, zero-dependency analytical scoring based on the 11,365-guide benchmark weights for instant CPU screening (~150–600 ms per 1,000 guides on CPU, hardware-dependent; zero external model weight files required). Single-guide critiques (`explain_guide()`, `--explain`) evaluate biophysical rules derived from global TreeSHAP analysis.
+> 1. **Calibrated Biophysical Scoring Engine (Default)**: Rapid, zero-dependency analytical scoring based on the 11,365-guide benchmark weights for instant CPU screening (~150-600 ms per 1,000 guides on CPU, hardware-dependent; zero external model weight files required). Single-guide critiques (`explain_guide()`, `--explain`) evaluate biophysical rules derived from global TreeSHAP analysis.
 > 2. **Full GBDT Engine (Optional)**: If trained or provided via `--model <path>` (e.g. generated via `python src/03_train_models.py --save_booster`), the predictor executes full multivariate gradient boosted tree inference across all 57 biophysical features.
 > 3. **Global TreeSHAP Analysis**: Exact dataset-level Shapley value computation and 2-way interaction matrices are generated via `src/04_plot_shap_figures.py` and visualized in Figures 3A/3B.
 
@@ -177,32 +177,32 @@ print(f"Base Stacking Free Energy: {features['stacking_dg_spacer']} kcal/mol")
 
 ```
 .
-├── src/
-│   ├── 01_preprocess_data.py             # Data cleaning & Quality Control
-│   ├── 01b_exploratory_data_analysis.py  # Exploratory Data Analysis & Figure 1 generator
-│   ├── 01c_plot_figure_s1.py             # Supplementary Figure S1 generator
-│   ├── 02_extract_features.py            # Master feature extraction pipeline
-│   ├── 03_train_models.py                # 10-fold stratified CV & LightGBM training
-│   ├── 04_plot_shap_figures.py           # TreeSHAP attribution & figure generator
-│   ├── 05_model_validation_benchmark.py  # Benchmark validation & Figure 2
-│   └── cas12a_xai/                       # Production Python package
-│       ├── __init__.py
-│       ├── features.py                   # SantaLucia thermodynamics & feature extraction
-│       ├── predictor.py                  # Predictor class & biophysical critique engine
-│       └── cli.py                        # Terminal CLI executable
-├── tests/
-│   ├── __init__.py
-│   └── test_pipeline.py                  # Automated unit test suite
-├── notebooks/
-│   └── Cas12a_Complete_Master_Pipeline.ipynb # 1-Click Interactive Master Pipeline
-├── data/
-│   └── results/                          # Validated out-of-fold CV predictions & benchmark tables
-├── requirements.txt
-├── setup.py
-├── pyproject.toml
-├── LICENSE
-├── CONTRIBUTING.md
-└── README.md
++-- src/
+|   +-- 01_preprocess_data.py             # Data cleaning & Quality Control
+|   +-- 01b_exploratory_data_analysis.py  # Exploratory Data Analysis & Figure 1 generator
+|   +-- 01c_plot_figure_s1.py             # Supplementary Figure S1 generator
+|   +-- 02_extract_features.py            # Master feature extraction pipeline
+|   +-- 03_train_models.py                # 10-fold stratified CV & LightGBM training
+|   +-- 04_plot_shap_figures.py           # TreeSHAP attribution & figure generator
+|   +-- 05_model_validation_benchmark.py  # Benchmark validation & Figure 2
+|   +-- cas12a_xai/                       # Production Python package
+|       +-- __init__.py
+|       +-- features.py                   # SantaLucia thermodynamics & feature extraction
+|       +-- predictor.py                  # Predictor class & biophysical critique engine
+|       +-- cli.py                        # Terminal CLI executable
++-- tests/
+|   +-- __init__.py
+|   +-- test_pipeline.py                  # Automated unit test suite
++-- notebooks/
+|   +-- Cas12a_Complete_Master_Pipeline.ipynb # 1-Click Interactive Master Pipeline
++-- data/
+|   +-- results/                          # Validated out-of-fold CV predictions & benchmark tables
++-- requirements.txt
++-- setup.py
++-- pyproject.toml
++-- LICENSE
++-- CONTRIBUTING.md
++-- README.md
 ```
 
 ---
@@ -224,7 +224,7 @@ If you use `cas12a-xai` or our biophysical findings in your research, please cit
 @article{tran2026cas12a_xai,
   title={Deciphering the Biophysical and Epistatic Determinants of CRISPR-Cas12a Guide RNA Cleavage Efficiency via Explainable Machine Learning},
   author={Tran, Minh},
-  journal={Bioinformatics (In Review)},
+  journal={Zenodo software archive},
   year={2026},
   doi={10.5281/zenodo.23016967},
   url={https://github.com/tranphuongminh2346-art/Cas12a-Explainable-AI}
